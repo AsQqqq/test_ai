@@ -8,20 +8,6 @@ console = "clear"
 
 network = OurNeuralNetwork()
 
-# # Определим набор данных
-# data = np.array([
-#   [-2, -1],  # Алиса
-#   [25, 6],   # Боб
-#   [17, 4],   # Чарли
-#   [-15, -6], # Диана 
-# ])
-# all_y_trues = np.array([
-#   1, # Алиса
-#   0, # Боб
-#   0, # Чарли
-#   1, # Диана
-# ])
-
 def calculation(weight: int, height: int) -> None:
     weight_pounds = int(weight * 2.2)
     height_inch = int(height * 0.39)
