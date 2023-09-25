@@ -2,25 +2,25 @@ from os import system
 from time import sleep
 import numpy as np
 from ai import OurNeuralNetwork
-from training import hub_generator
+from training import generate
 
 console = "clear"
 
 network = OurNeuralNetwork()
 
-# Определим набор данных
-data = np.array([
-  [-2, -1],  # Алиса
-  [25, 6],   # Боб
-  [17, 4],   # Чарли
-  [-15, -6], # Диана 
-])
-all_y_trues = np.array([
-  1, # Алиса
-  0, # Боб
-  0, # Чарли
-  1, # Диана
-])
+# # Определим набор данных
+# data = np.array([
+#   [-2, -1],  # Алиса
+#   [25, 6],   # Боб
+#   [17, 4],   # Чарли
+#   [-15, -6], # Диана 
+# ])
+# all_y_trues = np.array([
+#   1, # Алиса
+#   0, # Боб
+#   0, # Чарли
+#   1, # Диана
+# ])
 
 def calculation(weight: int, height: int) -> None:
     weight_pounds = int(weight * 2.2)
@@ -58,10 +58,7 @@ if __name__ == "__main__":
     system(console)
     print('loading...')
     sleep(1)
+    data = generate()[0]
+    all_y_trues = generate()[1]
     network.train(data, all_y_trues)
-    system(console)
-    menu = input('1/2 -> ')
-    if int(menu) == 1:
-        run()
-    elif int(menu) == 2:
-        hub_generator()
+    run()
