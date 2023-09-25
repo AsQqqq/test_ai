@@ -4,6 +4,8 @@ import numpy as np
 from ai import OurNeuralNetwork
 from training import hub_generator
 
+console = "clear"
+
 network = OurNeuralNetwork()
 
 # Определим набор данных
@@ -38,7 +40,7 @@ def calculation(weight: int, height: int) -> None:
     end(result=result)
     
 def end(result: str) -> None:
-    system('cls')
+    system(console)
     print(result)
     input("Press to resume...")
     run()
@@ -47,18 +49,18 @@ def end(result: str) -> None:
 
 def run() -> None:
     """Start code"""
-    system('cls')
+    system(console)
     weight = input('weight (kg) -> ')
     height = input('height (cm) -> ')
     calculation(weight=int(weight), height=int(height))
     
 
 if __name__ == "__main__":
-    system('cls')
+    system(console)
     print('loading...')
     sleep(1)
     network.train(data, all_y_trues)
-    system('cls')
+    system(console)
     menu = input('1/2 -> ')
     if int(menu) == 1:
         run()
