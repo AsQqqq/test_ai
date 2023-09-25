@@ -34,7 +34,7 @@ class OurNeuralNetwork:
 
   def train(self, data, all_y_trues):
     learn_rate = 0.1
-    epochs = 1000 # сколько раз пройти по всему набору данных 
+    epochs = 4000 # сколько раз пройти по всему набору данных 
 
     for epoch in range(epochs):
       for x, y_true in zip(data, all_y_trues):
