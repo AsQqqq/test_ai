@@ -2,7 +2,7 @@ from os import system
 from time import sleep
 import numpy as np
 from ai import OurNeuralNetwork
-from training import training_run
+from training import hub_generator
 
 network = OurNeuralNetwork()
 
