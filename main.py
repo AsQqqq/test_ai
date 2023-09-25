@@ -46,7 +46,6 @@ def end(result: str) -> None:
     run()
 
 
-
 def run() -> None:
     """Start code"""
     system(console)
@@ -65,4 +64,4 @@ if __name__ == "__main__":
     if int(menu) == 1:
         run()
     elif int(menu) == 2:
-        training_run()
+        hub_generator()
