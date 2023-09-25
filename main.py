@@ -2,6 +2,7 @@ from os import system
 from time import sleep
 import numpy as np
 from ai import OurNeuralNetwork
+from training import training_run
 
 network = OurNeuralNetwork()
 
@@ -39,8 +40,7 @@ def calculation(weight: int, height: int) -> None:
 def end(result: str) -> None:
     system('cls')
     print(result)
-    print('loading...')
-    sleep(5)
+    input("Press to resume...")
     run()
 
 
@@ -48,14 +48,19 @@ def end(result: str) -> None:
 def run() -> None:
     """Start code"""
     system('cls')
-    print('loading...')
-    sleep(1.5)
-    network.train(data, all_y_trues)
-    system('cls')
     weight = input('weight (kg) -> ')
     height = input('height (cm) -> ')
     calculation(weight=int(weight), height=int(height))
     
 
 if __name__ == "__main__":
-    run()
+    system('cls')
+    print('loading...')
+    sleep(1)
+    network.train(data, all_y_trues)
+    system('cls')
+    menu = input('1/2 -> ')
+    if int(menu) == 1:
+        run()
+    elif int(menu) == 2:
+        training_run()
